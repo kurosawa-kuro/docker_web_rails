@@ -130,3 +130,33 @@ rm -f src/tmp/pids/server.pid && docker-compose up
 http://localhost:3000/users
 
 # API
+
+
+```
+docker-compose run web rails new . --force --database=mysql --api
+docker-compose build
+```
+
+- config/database.yml
+```
+  username: root
+  password: password
+  host: mysql
+```
+
+```
+docker-compose run rails g scaffold Blog title:string body:text
+docker-compose run web rails g scaffold Blog title:string body:text
+docker-compose run web rails db:migrate
+docker-compose up
+```
+
+## 新規登録
+```
+curl -X POST -H "Content-Type: application/json" -d '{"blog":{"title": "RailsとSwiftでAPI通信を行うブログアプリを作成","body": "何書こうかな"}}' http://localhost:3000/blogs
+```
+
+## リスト表示
+```
+curl localhost:3000/blogs
+```
