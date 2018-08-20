@@ -160,3 +160,5 @@ curl -X POST -H "Content-Type: application/json" -d '{"blog":{"title": "Railsと
 ```
 curl localhost:3000/blogs
 ```
+
+test
