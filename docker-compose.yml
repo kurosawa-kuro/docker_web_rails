@@ -28,6 +28,22 @@ services:
       - mysql
       - postgres
 
+  web-django:
+    build:
+      context: .
+      dockerfile: ./docker/python/Dockerfile
+    container_name: web-django
+    command: python3 manage.py runserver 0.0.0.0:8000
+    environment:
+      - "TZ=Japan"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+      - postgres
+
   ####################
   # MySQL            #
   ####################
