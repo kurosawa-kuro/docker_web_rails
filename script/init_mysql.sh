@@ -1,29 +1,41 @@
 #!/bin/bash
 
 # デバッグを開始する
-set -x
+# set -x
 
+echo -e $'\e[1;31m ================================= \e[m'
 echo -e $'\e[1;31m コンテナの停止と削除 \e[m'
+echo -e $'\e[1;31m ================================= \e[m'
 docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 
-echo -e $'\e[1;31m srcの作り直し \e[m'
-rm -rf src/
-cp -rf script/ori_src/ src
+echo -e $'\e[1;31m ================================= \e[m'
+echo -e $'\e[1;31m workspaceの作り直し \e[m'
+echo -e $'\e[1;31m ================================= \e[m'
+rm -rf workspace/
+mkdir workspace/
+cp -rf docker/web/ruby/rails/Gemfile workspace/Gemfile
+cp -rf docker/web/ruby/rails/Gemfile.lock workspace/Gemfile.lock
 
 rm -rf tmp/
 
+echo -e $'\e[1;31m ================================= \e[m'
 echo -e $'\e[1;31m rails new \e[m'
+echo -e $'\e[1;31m ================================= \e[m'
 docker-compose run web rails new . --force --database=mysql
-docker-compose build
+docker-compose build web
 
+echo -e $'\e[1;31m ================================= \e[m'
 echo -e $'\e[1;31m rake db:create \e[m'
-cp -f docker/mysql/database.yml src/config/database.yml
+echo -e $'\e[1;31m ================================= \e[m'
+cp -f docker/database/mysql/database.yml workspace/config/database.yml
 
-docker-compose up -d
+docker-compose up -d mysql
 docker-compose run web bundle exec rake db:create
 
+echo -e $'\e[1;31m ================================= \e[m'
 echo -e $'\e[1;31m コンテナ起動 \e[m'
-rm -f src/tmp/pids/server.pid && docker-compose up
+echo -e $'\e[1;31m ================================= \e[m'
+rm -f workspace/tmp/pids/server.pid && docker-compose up web mysql mysql-gui portainer
 
 # デバッグを終了する
 set +x

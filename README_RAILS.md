@@ -1,7 +1,57 @@
 # Docker Web Rails
+# Build
+## In case MySQL
+```
+docker-compose run web rails new . --force --database=mysql
+docker-compose build
+```
 
-# Rails
-[Railsのリンク](./README_RAILS.md)
+- config/database.yml
+```
+  username: root
+  password: password
+  host: mysql
+```
+
+## In case PostgreSQL
+```
+docker-compose run --rm web rails new . --force --database=postgresql
+docker-compose build
+```
+
+- config/database.yml
+```
+  encoding: unicode
+  username: postgres
+  password: postgres
+  host: postgres
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+```
+
+# Create Database
+```
+docker-compose up -d
+docker-compose run web bundle exec rake db:create
+```
+
+# タイムゾーンの設定
+- config/application.rb
+```
+    # タイムゾーンの設定
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+```
+
+# コンテナ起動
+```
+# コンテナ起動
+rm -f src/tmp/pids/server.pid && docker-compose up
+
+# バックグラウンドでコンテナ起動
+rm -f src/tmp/pids/server.pid && docker-compose up -d
+```
 
 # コンテナの停止
 ```
