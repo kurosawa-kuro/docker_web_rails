@@ -1,7 +1,7 @@
 # Docker Web Rails
 
 # Rails
-[Railsのリンク](./README_RAILS.md)
+[Railsのリンク](./docs/README_RAILS.md)
 
 # コンテナの停止
 ```
@@ -59,56 +59,3 @@ http://localhost:9000
 |  Redis  |  xxx  |  xxx  |
 |  Redis Commander  |  8081  |  8081  |
 |  Cloud9  |  9000  |  81  |
-
-# Command
-
-|    |    |
-| ---- | ---- |
-|  rails g model Member  |  docker-compose run web rails g model Member  |
-|  rake db:migrate  |  docker-compose run web rake db:migrate  |
-|  rails dbconsole  |  docker-compose run web rails dbconsole  |
-|  RAILS_ENV=test bundle exec rake db:setup  |  docker-compose run -e RAILS_ENV=test web bundle exec rake db:setup  |
-
-# Scaffold
-
-```
-docker-compose run web rails g scaffold user user:string content:text datetime:datetime
-docker-compose run web rails db:migrate
-rm -f src/tmp/pids/server.pid && docker-compose up
-```
-
-http://localhost:3000/users
-
-# API
-
-
-```
-docker-compose run web rails new . --force --database=mysql --api
-docker-compose build
-```
-
-- config/database.yml
-```
-  username: root
-  password: password
-  host: mysql
-```
-
-```
-docker-compose run rails g scaffold Blog title:string body:text
-docker-compose run web rails g scaffold Blog title:string body:text
-docker-compose run web rails db:migrate
-docker-compose up
-```
-
-## 新規登録
-```
-curl -X POST -H "Content-Type: application/json" -d '{"blog":{"title": "RailsとSwiftでAPI通信を行うブログアプリを作成","body": "何書こうかな"}}' http://localhost:3000/blogs
-```
-
-## リスト表示
-```
-curl localhost:3000/blogs
-```
-
-test
