@@ -64,31 +64,40 @@ http://localhost:9000
 
 # Port
 
-|  Name  |  Host  |  Container  |  デフォルト  |
-| ---- | ---- | ---- | ---- |
-|  Apache  |  xxx  |  xxx  |  xxx  |
-|  Nginx  |  xxx  |  xxx  |  xxx  |
-|  Rails  |  3000  |  3000  |  3000  |
-|  Django  |  3000  |  3000  |  3000  |
-|  php  |  3000  |  3000  |  3000  |
-|  Laravel  |  3000  |  3000  |  3000  |
-|  Zend Framework  |  3000  |  3000  |  3000  |
-|  Express  |  3306  |  3306  |  3306  |
-|  Play  |  3306  |  3306  |  3306  |
-|  MySQL  |  3306  |  3306  |  3306  |
-|  phpMyAdmin  |  8080  |  80  |  80  |
-|  PostgreSQL  |  xxx  |  xxx  |  xxx  |
-|  pgweb  |  7000  |  8080  |  8080  |
-|  Oracle  |  8082  |  8082 |   8082  |
-|  MongoDB  |  xxx  |  xxx |   xxx  |
-|  mongo-express  |  8082  |  8082 |   8082  |
-|  Redis  |  xxx  |  xxx  |  xxx  |
-|  Redis Commander  |  8081  |  8081  |  8081  |
-|  Adminer  |  9000  |  81  |  8081  |
-|  Anaconda  |  9000  |  81  |  8081  |
-|  Jenkins  |  9000  |  81  |  8081  |
-|  TRUFFLE  |  9000  |  81  |  8081  |
-|  Zabbix  |  9000  |  81  |  8081  |
-|  Nagios  |  9000  |  81  |  8081  |
-|  portainer.io  |  9000  |  81  |  8081  |
-|  Cloud9  |  9000  |  81  |  8081  |
+|  Name  | 　Category  | Host  |  Container  |  デフォルト  |
+| ---- | ---- | ---- | ---- | ---- |
+|  portainer  |  docker gui  |  81  |  8081  |  xxx  |
+|  Cloud9  |  editor  |  81  |  8081  |  xxx  |
+|  Apache  |  web server  |  xxx  |  xxx  |  xxx  |
+|  Nginx  |  web server  |  xxx  |  xxx  |  xxx  |
+|  Rails  |  waf  |  3000  |  3000  |  xxx  |
+|  Django  |  waf  |  3000  |  3000  |  xxx  |
+|  php  |  wa  |  3000  |  3000  |  xxx  |
+|  Laravel  |  waf  |  3000  |  3000  |  xxx  |
+|  Zend Framework  |  waf  |  3000  |  3000  |  xxx  |
+|  Express  |  waf  |  3306  |  3306  |  xxx  |
+|  Play  |  waf  |  3306  |  3306  |  xxx  |
+|  MySQL  |  db  |  3306  |  3306  |  xxx  |
+|  phpMyAdmin  |  db gui  |  80  |  80  |  xxx  |
+|  PostgreSQL  |  db  |  xxx  |  xxx  |  xxx  |
+|  pgweb  |  db gui  |  8080  |  8080  |  xxx  |
+|  Oracle  |  db  |  8082 |   8082  |  xxx  |
+|  MongoDB  |  db  |  xxx |   xxx  |  xxx  |
+|  mongo-express  |  db gui  |  8082 |   8082  |  xxx  |
+|  Redis  |  db  |  xxx  |  xxx  |  xxx  |
+|  Redis Commander  |  db gui  |  8081  |  8081  |  xxx  |
+|  Adminer  |  db gui  |  81  |  8081  |  xxx  |
+|  Anaconda  |  data science  |  81  |  8081  |  xxx  |
+|  Jenkins  |  test  |  81  |  8081  |  xxx  |
+|  Truffle Suite  |  blockchain  |  81  |  8081  |  xxx  |
+|  geth  |  blockchain  |  81  |  8081  |  xxx  |
+|  New Relic  |  監視  |  81  |  8081  |  xxx  |
+|  Data Dog |  監視  |  81  |  8081  |  xxx  |
+|  Zabbix  |  監視  |  81  |  8081  |  xxx  |
+|  Nagios  |  監視  |  81  |  8081  |  xxx  |
+|  Fluentd  |  ログ可視化  |  81  |  8081  |  xxx  |
+|  kibana  |  ログ可視化  |  81  |  8081  |  xxx  |
+|  Elasticsearch  |  全文検索エンジン  |  81  |  8081  |  xxx  |
+|  Treasure Data  |  ELK  |  81  |  8081  |  xxx  |
+|  Splunk  |  ELK  |  81  |  8081  |  xxx  |
+|  Redmine  |  チケット管理  |  81  |  8081  |  xxx  |
