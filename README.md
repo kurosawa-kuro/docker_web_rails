@@ -73,13 +73,15 @@ http://localhost:9000
 |  php  |  3000  |  3000  |  3000  |
 |  Laravel  |  3000  |  3000  |  3000  |
 |  Zend Framework  |  3000  |  3000  |  3000  |
+|  Express  |  3306  |  3306  |  3306  |
+|  Play  |  3306  |  3306  |  3306  |
 |  MySQL  |  3306  |  3306  |  3306  |
 |  phpMyAdmin  |  8080  |  80  |  80  |
 |  PostgreSQL  |  xxx  |  xxx  |  xxx  |
 |  pgweb  |  7000  |  8080  |  8080  |
+|  Oracle  |  8082  |  8082 |   8082  |
 |  MongoDB  |  xxx  |  xxx |   xxx  |
 |  mongo-express  |  8082  |  8082 |   8082  |
-|  Oracle  |  8082  |  8082 |   8082  |
 |  Redis  |  xxx  |  xxx  |  xxx  |
 |  Redis Commander  |  8081  |  8081  |  8081  |
 |  Adminer  |  9000  |  81  |  8081  |
