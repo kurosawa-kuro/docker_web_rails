@@ -11,7 +11,7 @@ docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 echo -e $'\e[1;31m ================================= \e[m'
 echo -e $'\e[1;31m workspaceの作り直し \e[m'
 echo -e $'\e[1;31m ================================= \e[m'
-rm -rf workspace/
+sudo rm -rf workspace/
 mkdir workspace/
 cp -rf docker/web/ruby/rails/Gemfile workspace/Gemfile
 cp -rf docker/web/ruby/rails/Gemfile.lock workspace/Gemfile.lock
