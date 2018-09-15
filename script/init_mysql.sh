@@ -23,6 +23,11 @@ docker-compose run web rails new . --force --database=mysql
 docker-compose build web
 
 echo -e $'\e[1;31m ================================= \e[m'
+echo -e $'\e[1;31m chown $USER workspace \e[m'
+echo -e $'\e[1;31m ================================= \e[m'
+sudo chown -R $USER:$USER workspace/
+
+echo -e $'\e[1;31m ================================= \e[m'
 echo -e $'\e[1;31m rake db:create \e[m'
 echo -e $'\e[1;31m ================================= \e[m'
 cp -f docker/database/mysql/database.yml workspace/config/database.yml
