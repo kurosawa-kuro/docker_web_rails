@@ -12,9 +12,7 @@ services:
   # Web Framework    #
   ####################
   web:
-    build:
-      context: .
-      dockerfile: ./docker/web/ruby/rails/Dockerfile
+    image: kurosawakuro/ruby_on_rails_image    
     container_name: web
     env_file: .env
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
@@ -213,9 +211,7 @@ services:
   # Cloud9           #
   ####################
   cloud9:
-    build:
-      context: .
-      dockerfile: ./docker/service/cloud9/Dockerfile
+    image: kurosawakuro/dockercloud9
     container_name: cloud9
     command: node /cloud9/server.js --port 9001 -w /workspace -l 0.0.0.0 --auth user:password
     ports:
