@@ -44,9 +44,7 @@ services:
       - postgres
 
   web-php:
-    build:
-      context: .
-      dockerfile: ./docker/web/php/Dockerfile
+    image: kurosawa-kuro/php_image
     container_name: web-php
     environment:
       - "TZ=Japan"
