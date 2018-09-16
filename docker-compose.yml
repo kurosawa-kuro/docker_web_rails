@@ -209,7 +209,7 @@ services:
   # Cloud9           #
   ####################
   cloud9:
-    image: kurosawakuro/dockercloud9
+    image: kurosawakuro/cloud9_image
     container_name: cloud9
     command: node /cloud9/server.js --port 9001 -w /workspace -l 0.0.0.0 --auth user:password 
     ports:
