@@ -169,9 +169,7 @@ services:
   # Anaconda         #
   ####################
   anaconda:
-    build:
-      context: .
-      dockerfile: ./docker/data_science/anaconda/Dockerfile
+    image: kurosawa-kuro/anaconda_image
     container_name: anaconda
     ports:
       - "8880:8888"
