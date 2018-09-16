@@ -28,9 +28,7 @@ services:
       - postgres
 
   web-django:
-    build:
-      context: .
-      dockerfile: ./docker/web/python/django/Dockerfile
+    image: kurosawa-kuro/django_image
     container_name: web-django
     command: python3 manage.py runserver 0.0.0.0:8000
     environment:
