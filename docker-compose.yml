@@ -28,7 +28,7 @@ services:
       - postgres
 
   web-django:
-    image: kurosawa-kuro/django_image
+    image: kurosawakuro/django_image
     container_name: web-django
     command: python3 manage.py runserver 0.0.0.0:8000
     environment:
@@ -42,7 +42,7 @@ services:
       - postgres
 
   web-php:
-    image: kurosawa-kuro/php_image
+    image: kurosawakuro/php_image
     container_name: web-php
     environment:
       - "TZ=Japan"
@@ -167,7 +167,7 @@ services:
   # Anaconda         #
   ####################
   anaconda:
-    image: kurosawa-kuro/anaconda_image
+    image: kurosawakuro/anaconda_image
     container_name: anaconda
     ports:
       - "8880:8888"
