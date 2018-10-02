@@ -124,7 +124,7 @@ http://localhost:9000
 ```
 docker-compose run web rails g scaffold user user:string content:text datetime:datetime
 docker-compose run web rails db:migrate
-rm -f src/tmp/pids/server.pid && docker-compose up
+rm -f workspace/tmp/pids/server.pid && docker-compose up web mysql mysql-gui portainer cloud9
 ```
 
 http://localhost:3000/users
@@ -148,7 +148,7 @@ docker-compose build
 docker-compose run rails g scaffold Blog title:string body:text
 docker-compose run web rails g scaffold Blog title:string body:text
 docker-compose run web rails db:migrate
-docker-compose up
+rm -f workspace/tmp/pids/server.pid && docker-compose up web mysql mysql-gui portainer cloud9
 ```
 
 ## 新規登録
